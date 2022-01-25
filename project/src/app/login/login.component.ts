@@ -39,7 +39,7 @@ export class LoginComponent implements OnInit {
       console.log(resp);
       //if user ok
       localStorage.setItem('user', JSON.stringify(resp));
-      this.router.navigateByUrl('books/list');
+      this.router.navigateByUrl('book');
     });
   }
 }

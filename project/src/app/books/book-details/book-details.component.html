@@ -1,3 +1,21 @@
-<p>
-  book-details works!
-</p>
+<div class="container mt-5">
+  <h2>{{ header }}</h2>
+
+  <form>
+    <div class="form-group">
+      <label for="">Id</label>
+      <input type="text" class="form-control" ngModel name="id" />
+    </div>
+    <div class="form-group">
+      <label for="">Name</label>
+      <input type="text" class="form-control" ngModel name="name" />
+    </div>
+    <div class="form-group">
+      <label for="">GenreId</label>
+      <input type="text" class="form-control" ngModel name="genreid" />
+    </div>
+    <div class="form-group">
+      <button type="submit" class="btn btn-primary">Save</button>
+    </div>
+  </form>
+</div>
