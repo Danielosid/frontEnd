@@ -15,6 +15,7 @@ login(username:string,pass:string) : Observable<user>{
   const u = new user();
   u.name="test";
   u.token="token";
+  u.role=1;
   return new Observable((obs) => obs.next(u));
 
   //pt backend

@@ -6,30 +6,28 @@ import { LoginService } from './login.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
-
   form = new FormGroup({
-    username: new FormControl("", [Validators.required]),
-    password: new FormControl("", [Validators.required]),
-  })
+    username: new FormControl('', [Validators.required]),
+    password: new FormControl('', [Validators.required]),
+  });
 
-  constructor(private loginService: LoginService, private router: Router ) { }
+  constructor(private loginService: LoginService, private router: Router) {}
 
-  ngOnInit() { }
+  ngOnInit() {}
 
-  login(){
+  login() {
     //request backend
     console.log(this.form.value);
-    const name = this.form.controls["username"].value;
-    const password = this.form.controls["password"].value;
-    this.loginService.login(name, password).subscribe(resp => {
+    const name = this.form.controls['username'].value;
+    const password = this.form.controls['password'].value;
+    this.loginService.login(name, password).subscribe((resp) => {
       console.log(resp);
       //if user ok
-      this.router.navigateByUrl("books/list");
-
-    })
+      localStorage.setItem('user', JSON.stringify(resp));
+      this.router.navigateByUrl('books/list');
+    });
   }
-
 }
