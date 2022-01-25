@@ -6,6 +6,11 @@ const routes: Routes = [
     path: 'login',
     loadChildren: () => 
       import('src/app/login/login.module').then((m) => m.LoginModule),
+  },
+  {
+    path:'books',
+    loadChildren: () => 
+      import('src/app/books/books.module').then((m) => m.BooksModule),
   }
 ];
 
